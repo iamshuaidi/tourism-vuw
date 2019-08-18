@@ -7,22 +7,38 @@
 
   <div>
     <h1>欢迎 ~ 管理员:{{admin.name}}</h1>
+    <d2>
+      <p><button class="btComplaint" @click="complaint">投诉处理中心</button></p>
+      <p><button class="btAlarm" @click="alarm">紧急报案中心</button></p>
+      <p><button class="btScenery" @click="scenery">票务中心</button></p>
+    </d2>
   </div>
 </div>
 </template>
 
 <script>
-  export default {
-    name: 'home',
-    data(){
-      return{
-        admin:''
-      }
+export default {
+  name: 'admin',
+  data () {
+    return {
+      admin: {}
+    }
+  },
+  mounted () {
+    this.admin = this.$route.query.admin
+  },
+  methods: {
+    complaint () {
+      this.$router.push({path: '/dealComplaint', query: {admin: this.admin}})
     },
-    mounted () {
-        this.admin = this.$route.query.admin
+    alarm () {
+      this.$router.push({path: '/dealAlarm', query: {admin: this.admin}})
+    },
+    scenery () {
+      this.$router.push({path: '/sceneryCenter', query: {admin: this.admin}})
     }
   }
+}
 </script>
 
 <style scoped>
@@ -65,5 +81,20 @@
     margin-top: 10px;
   }
 
+  d2{
+    top: 70px;
+    right: 100px;
+    position: absolute;
+    margin-top: 30px;
+  }
+  .btComplaint{
+    background-color: #d6e9c6;
+  }
+  .btAlarm{
+    background-color: #d6e9c6;
+  }
+  .btScenery{
+    background-color: #d6e9c6;
+  }
 
 </style>

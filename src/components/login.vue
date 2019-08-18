@@ -23,48 +23,48 @@
 </template>
 
 <script>
-  import qs from 'qs'
+import qs from 'qs'
 
-  export default {
-    name: 'login',
-    data () {
-      return {
-        responseResult: [],
-        loginInfo: {
-          phone: '',
-          password: ''
-        },
-        message:'',
-        date:'',
-        admin:[],
-        name:''
+export default {
+  name: 'login',
+  data () {
+    return {
+      responseResult: [],
+      loginInfo: {
+        phone: '',
+        password: ''
+      },
+      message: '',
+      date: '',
+      admin: [],
+      name: ''
+    }
+  },
+
+  methods: {
+    login () {
+      let entity = {
+        phone: this.loginInfo.phone,
+        password: this.loginInfo.password
       }
-    },
 
-    methods: {
-      login () {
-        let entity = {
-          phone: this.loginInfo.phone,
-          password: this.loginInfo.password
-        }
-
-        this.$axios.post('/api/login', qs.stringify(entity)).then(response => {
-          this.responseResult = response.data
-          this.message = response.data.message
-          if(this.message === 'OK'){
-            for (let i in response.data.length) {
-              this.responseResult.push(response.data[i])
-            }
-            this.$router.push({path:'/home',query:{admin:this.responseResult.admin}})
-           // this.$router.push({name:'/home',params:{admin:response.data}})
+      this.$axios.post('/api/login', qs.stringify(entity)).then(response => {
+        this.responseResult = response.data
+        this.message = response.data.message
+        if (this.message === 'OK') {
+          for (let i in response.data.length) {
+            this.responseResult.push(response.data[i])
           }
-        }).catch(failed => {
-          this.responseResult = '请求失败'
-        })
-      }
-    },
-
+          this.$router.push({path: '/admin', query: {admin: this.responseResult.admin}})
+          // this.$router.push({name:'/home',params:{admin:response.data}})
+        }
+      }).catch(failed => {
+        this.responseResult = '请求失败'
+      })
+    }
   }
+
+}
 </script>
 
 <style scoped>
@@ -110,6 +110,5 @@
   .input{
     font-size: 40px;
   }
-
 
 </style>

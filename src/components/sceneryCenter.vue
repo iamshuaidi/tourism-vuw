@@ -11,16 +11,16 @@
 </template>
 
 <script>
-  export default {
-    name: 'sceneryCenter',
-    data () {
-      return {
-        backgroundDiv: {
-          backgroundImage: 'url(' + require('../assets/background.png') + ')'
-        }
+export default {
+  name: 'sceneryCenter',
+  data () {
+    return {
+      backgroundDiv: {
+        backgroundImage: 'url(' + require('../assets/background.png') + ')'
       }
     }
   }
+}
 </script>
 
 <style scoped>
