@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="header-title">
-      <span><router-link to="/"><button style="font-size: 30px">返回首页</button></router-link></span>
+      <span><router-link to="/admin"><button style="font-size: 30px">返回</button></router-link></span>
       <div class="header-title-text">票务查询</div>
     </div>
 

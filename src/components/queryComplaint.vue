@@ -11,20 +11,20 @@
         <button class="btquery" @click="query">投诉查询</button>
       </d2>
       <!--跳转到指定页面根据这个图片的id-->
-        <ul class="comul" v-for="item in complaintList">
-          <d3>
+        <ul class="comul" v-for="item in complaintList" :key="item">
+          <div clas="complaintItem">
           <p>投诉流水号:{{item.number}}</p>
-            <p>姓名:{{item.name}}         <d4>投诉时间:{{item.createTime | formatDate}}</d4></p>
-          <p>状态:{{item.result | isNull}}     <d5><router-link :to="'/showComplaint/' + item.id">查看详情</router-link></d5></p>
-          </d3>
+            <p>姓名:{{item.name}}    </p>     <div class="time">投诉时间:{{item.createTime | formatDate}}</div>
+          <p>状态:{{item.result | isNull}} </p>   <div class="show"><router-link :to="'/showComplaint/' + item.id">查看详情</router-link></div>
+          </div>
         </ul>
-      <d6>
+      <div class="nullShow">
         <div v-if="phone != null">
         <div v-if="complaintList.length==0">
          该手机号未提交投诉
         </div>
         </div>
-      </d6>
+      </div>
     </div>
 </template>
 
@@ -89,7 +89,7 @@ export default {
   .btquery{
     background-color:#1c6ca1;
   }
-  d3{
+  complaintItem{
     float: left;
     width:1000px;
     margin-top:20px;
@@ -97,13 +97,13 @@ export default {
     margin-right:800px;
     left:50px;
   }
-  d4{
+  time{
     margin-left:50px;
   }
-  d5{
+  show{
     margin-left:300px;
   }
-  d6{
+  nullShow{
     top: 100px;
     position: absolute
   }

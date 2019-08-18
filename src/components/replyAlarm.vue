@@ -16,9 +16,9 @@
         </p>
         <textarea id="editor" style="resize:none" rows="12" cols="100" placeholder="请输入处理结果" maxlength="500" required="required" @input = "descInput" v-model="desc" />
         <span>{{remnant}}/500</span>
-        <d3>
+        <div class="csubmit">
           <input class="btsubmit" type="submit" value="提交">
-        </d3>
+        </div>
       </div>
     </form>
   </div>
@@ -52,11 +52,13 @@ export default {
       cid: '',
       remnant: 500,
       desc: '',
-      alarm: {}
+      alarm: {},
+      admin: {},
+      aid: ''
     }
   },
   mounted () {
-    this.admin = this.$route.query.admin
+    this.admin = JSON.parse(localStorage.getItem('admin'))
   },
   methods: {
     descInput () {
@@ -101,7 +103,7 @@ export default {
 </script>
 
 <style>
-  d3{
+  csubmit{
     bottom: 10px;
     right: 580px;
     position: absolute;

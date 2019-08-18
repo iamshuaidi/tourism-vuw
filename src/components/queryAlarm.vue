@@ -11,20 +11,20 @@
       <button class="btquery" @click="query">报案查询</button>
     </d2>
     <!--跳转到指定页面根据这个图片的id-->
-    <ul class="comul" v-for="item in alarmList">
-      <d3>
+    <ul class="comul" v-for="item in alarmList" :key="item">
+      <div class="alarmItem">
         <p>报案流水号:{{item.number}}</p>
-        <p>姓名:{{item.name}}         <d4>报案时间:{{item.createTime | formatDate}}</d4></p>
-        <p>状态:{{item.result | isNull}}     <d5><router-link :to="'/showAlarm/' + item.id">查看详情</router-link></d5></p>
-      </d3>
+        <p>姓名:{{item.name}}   </p>      <div class="time">报案时间:{{item.createTime | formatDate}}</div>
+        <p>状态:{{item.result | isNull}} </p>    <div class="show"><router-link :to="'/showAlarm/' + item.id">查看详情</router-link></div>
+      </div>
     </ul>
-    <d6>
+    <div class="nullShow">
       <div v-if="phone != null">
         <div v-if="alarmList.length==0">
           该手机号未提交报案
         </div>
       </div>
-    </d6>
+    </div>
   </div>
 </template>
 
@@ -89,7 +89,7 @@ export default {
   .btquery{
     background-color:#1c6ca1;
   }
-  d3{
+  alarmItem{
     float: left;
     width:1000px;
     margin-top:20px;
@@ -97,13 +97,13 @@ export default {
     margin-right:800px;
     left:50px;
   }
-  d4{
+  time{
     margin-left:50px;
   }
-  d5{
+  show{
     margin-left:300px;
   }
-  d6{
+  nullShow{
     top: 100px;
     position: absolute
   }
