@@ -3,9 +3,9 @@
           xmlns:resize="http://www.w3.org/1999/xhtml" xmlns:cols="http://www.w3.org/1999/xhtml"
           xmlns:row="http://www.w3.org/1999/xhtml">
   <div>
-    <d2>
+    <div class="cquery">
       <button class="btquery"  @click="query">报案查询</button>
-    </d2>
+    </div>
     <form @submit.prevent="submit" ref="myform" :model="form">
       <fieldset>
         <p>
@@ -38,9 +38,9 @@
            <button @click="disabled = true">禁用</button>
         </p>-->
       </fieldset>
-      <d3>
+      <div class="csubmit">
         <input type="submit" class="btsubmit" value="提交"/>
-      </d3>
+      </div>
     </form>
   </div>
 

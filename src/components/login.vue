@@ -55,8 +55,10 @@ export default {
           for (let i in response.data.length) {
             this.responseResult.push(response.data[i])
           }
-          this.$router.push({path: '/admin', query: {admin: this.responseResult.admin}})
+          /* this.$router.push({ path: '/admin', query: {admin: this.responseResult.admin} }) */
           // this.$router.push({name:'/home',params:{admin:response.data}})
+          this.$router.push('/admin')
+          localStorage.setItem('admin', JSON.stringify(this.responseResult.admin))
         }
       }).catch(failed => {
         this.responseResult = '请求失败'

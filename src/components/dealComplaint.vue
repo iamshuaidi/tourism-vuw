@@ -8,14 +8,12 @@
     <d2>
       <button class="btquery" @click="query">查询</button>
     </d2>
-    <p>{{admin.id}}</p>
-    <p>{{admin.name}}</p>
     <!--跳转到指定页面根据这个图片的id-->
-    <ul class="comul" v-for="item in complaintList">
+    <ul class="comul" v-for="item in complaintList" :key="item">
       <div class="complaintItem">
         <p>投诉流水号:{{item.number}}</p>
-        <p>姓名:{{item.name}}         <div class="time">投诉时间:{{item.createTime | formatDate}}</div></p>
-        <p>状态:{{item.result | isNull}}     <div class="deal"><router-link :to="'/replyComplaint/' + item.id, admin">处理投诉</router-link></div></p>
+        <p>姓名:{{item.name}}  </p>       <div class="time">投诉时间:{{item.createTime | formatDate}}</div>
+        <p>状态:{{item.result | isNull}}  </p>  <div class="deal"><router-link :to="'/replyComplaint/' + item.id">处理投诉</router-link></div>
       </div>
     </ul>
   </div>
@@ -43,7 +41,7 @@ export default {
     }
   },
   mounted () {
-    this.admin = this.$route.query.admin
+    this.admin = JSON.parse(localStorage.getItem('admin'))
   },
   methods: {
     query () {

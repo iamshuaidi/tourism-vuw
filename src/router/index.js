@@ -5,7 +5,6 @@ import queryPark from '@/components/queryPark'
 import login from '@/components/login'
 import admin from '@/components/admin'
 import queryTicket from '@/components/queryTicket'
-import sceneryCenter from '@/components/sceneryCenter'
 import submitComplaint from '@/components/submitComplaint'
 import queryComplaint from '@/components/queryComplaint'
 import showComplaint from '@/components/showComplaint'
@@ -49,11 +48,6 @@ export default new Router({
       component: queryTicket
     },
     {
-      path: '/sceneryCenter',
-      name: 'sceneryCenter',
-      component: sceneryCenter
-    },
-    {
       path: '/',
       name: 'welcome',
       component: welcome
@@ -79,7 +73,7 @@ export default new Router({
       component: dealComplaint
     },
     {
-      path: '/replyComplaint/:id, admin',
+      path: '/replyComplaint/:id',
       name: 'replyComplaint',
       component: replyComplaint
     },

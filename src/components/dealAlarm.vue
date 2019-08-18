@@ -9,12 +9,12 @@
       <button class="btquery" @click="query">查询</button>
     </d2>
     <!--跳转到指定页面根据这个图片的id-->
-    <ul class="comul" v-for="item in alarmList">
-      <d3>
+    <ul class="comul" v-for="item in alarmList" :key="item">
+      <div class="alarmItem">
         <p>紧急报案流水号:{{item.number}}</p>
-        <p>姓名:{{item.name}}         <d4>报案时间:{{item.createTime | formatDate}}</d4></p>
-        <p>状态:{{item.result | isNull}}     <d5><router-link :to="'/replyAlarm/' + item.id">处理报案</router-link></d5></p>
-      </d3>
+        <p>姓名:{{item.name}}    </p>     <div class="time">报案时间:{{item.createTime | formatDate}}</div>
+        <p><label class="status" >状态:{{item.result | isNull}}   </label></p>  <div class="deal"><router-link :to="'/replyAlarm/'+item.id">处理报案</router-link></div>
+      </div>
     </ul>
   </div>
 </template>
@@ -35,8 +35,12 @@ export default {
   },
   data () {
     return {
-      alarmList: []
+      alarmList: [],
+      admin: {}
     }
+  },
+  mounted () {
+    this.admin = JSON.parse(localStorage.getItem('admin'))
   },
   methods: {
     query () {
@@ -74,17 +78,20 @@ export default {
   .btquery{
     background-color:#1c6ca1;
   }
-  d3{
+  alarmItem{
     float: left;
     width:1000px;
     margin-top:20px;
     margin-left:20px;
     margin-right:800px;
   }
-  d4{
+  time{
     margin-left:50px;
   }
-  d5{
+  deal{
     margin-left:300px;
+  }
+  status{
+    color: red;
   }
 </style>

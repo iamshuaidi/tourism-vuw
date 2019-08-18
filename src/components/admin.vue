@@ -25,7 +25,8 @@ export default {
     }
   },
   mounted () {
-    this.admin = this.$route.query.admin
+    /* this.admin = this.$route.query.admin */
+    this.admin = JSON.parse(localStorage.getItem('admin'))
   },
   methods: {
     complaint () {
@@ -35,7 +36,7 @@ export default {
       this.$router.push({path: '/dealAlarm', query: {admin: this.admin}})
     },
     scenery () {
-      this.$router.push({path: '/sceneryCenter', query: {admin: this.admin}})
+      this.$router.push({path: '/queryTicket', query: {admin: this.admin}})
     }
   }
 }

@@ -1,7 +1,5 @@
 <template>
   <div>
-    {{admin.id}}
-    {{admin.name}}
     <p>投诉流水号:{{complaint.number}}</p>
     <p>姓名:{{complaint.name}}</p>
     <p>手机号:{{complaint.phone}}</p>
@@ -18,7 +16,7 @@
       </p>
       <textarea id="editor" style="resize:none" rows="12" cols="100" placeholder="请输入处理结果" maxlength="500" required="required" @input = "descInput" v-model="desc" />
       <span>{{remnant}}/500</span>
-      <div class="dsubmit">
+      <div class="csubmit">
         <input class="btsubmit" type="submit" value="提交">
       </div>
     </div>
@@ -56,11 +54,12 @@ export default {
       remnant: 500,
       desc: '',
       complaint: {},
-      admin: {}
+      admin: {},
+      aid: {}
     }
   },
   mounted () {
-    this.admin = this.$route.query.admin
+    this.admin = JSON.parse(localStorage.getItem('admin'))
   },
   methods: {
     descInput () {
@@ -70,7 +69,6 @@ export default {
     getData () {
       // 接收到a.vue页面传递的id,都是根据id调用，因此调用相同的showComplaint方法
       let id = this.$route.params.id
-      this.admin = this.$router.params.admin
       axios.get('api/showComplaint', {
         params: {
           id
@@ -106,7 +104,7 @@ export default {
 </script>
 
 <style>
-  dsubmit{
+  csubmit{
     bottom: 10px;
     right: 580px;
     position: absolute;

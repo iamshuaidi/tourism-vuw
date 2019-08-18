@@ -3,11 +3,11 @@
     <h1>
       旅游管理服务平台
     </h1>
-    <d2>
+    <div class="cbutton">
       <p><button class="btComplaint" @click="complaint">我要投诉</button></p>
       <p><button class="btAlarm" @click="alarm">紧急报案</button></p>
       <p><button class="btLogin" @click="login">管理员登录</button></p>
-    </d2>
+    </div>
     <d3>
     <img src="../assets/hotellogo.png" height="100" width="120">
       <button class="btHotel" @click="hotel">酒店空房查询</button>
@@ -70,19 +70,31 @@ export default {
     color: #990055;
     position: absolute;
   }
-  d2{
+  cbutton{
     top: 20px;
     right: 100px;
     position: absolute;
     margin-top: 30px;
   }
   .btComplaint{
+    top: 0px;
+    right: 100px;
+    position: absolute;
+    margin-top: 30px;
     background-color: #d6e9c6;
   }
   .btAlarm{
+    top: 40px;
+    right: 100px;
+    position: absolute;
+    margin-top: 30px;
     background-color: #d6e9c6;
   }
   .btLogin{
+    top: 80px;
+    right: 100px;
+    position: absolute;
+    margin-top: 30px;
     background-color: #d6e9c6;
   }
   d3{
