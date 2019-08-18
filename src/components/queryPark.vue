@@ -33,41 +33,41 @@
 </template>
 
 <script>
-  import qs from 'qs'
+import qs from 'qs'
 
-  export default {
-    name: 'queryPark',
-    data () {
-      return {
-        responseResult: [],
-        sort: {
-          zhineng:1,
-          juli:2,
-          feiyong:5,
-          kongfang:4
-        }
+export default {
+  name: 'queryPark',
+  data () {
+    return {
+      responseResult: [],
+      sort: {
+        zhineng: 1,
+        juli: 2,
+        feiyong: 5,
+        kongfang: 4
       }
-    },
-
-    methods: {
-      querypark (data) {
-        this.$axios.get('/api/querypark', {params: {
-            flag: data
-          }
-        }).then(response => {
-          this.responseResult = response.data
-          for (let i in response.data.length) {
-            this.responseResult.push(response.data[i])
-          }
-        }).catch(fail => {
-          this.responseResult = '请求失败'
-        })
-      }
-    },
-
-    mounted () {
     }
+  },
+
+  methods: {
+    querypark (data) {
+      this.$axios.get('/api/querypark', {params: {
+        flag: data
+      }
+      }).then(response => {
+        this.responseResult = response.data
+        for (let i in response.data.length) {
+          this.responseResult.push(response.data[i])
+        }
+      }).catch(fail => {
+        this.responseResult = '请求失败'
+      })
+    }
+  },
+
+  mounted () {
   }
+}
 </script>
 
 <style scoped>

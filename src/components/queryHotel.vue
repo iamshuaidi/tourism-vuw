@@ -13,8 +13,6 @@
         <li><button style="font-size: 40px" v-on:click="queryhotel(sort.kongfang)">空房排序</button></li>
       </ul>
     </div>
-
-
     <div class="content bottom-border clear-float" v-for="item in responseResult">
       <div class="content-img">
         <img style="width:300px;height:150px" v-bind:src="item.imageUrl" />
@@ -33,44 +31,42 @@
       </div>
     </div>
 
-
-
   </div>
 </template>
 
 <script>
-  import qs from 'qs'
+import qs from 'qs'
 
-  export default {
-    name: 'queryHotel',
-    data () {
-      return {
-        responseResult: [],
-        sort: {
-          zhineng:1,
-          juli:2,
-          renqi:3,
-          kongfang:4
-        }
+export default {
+  name: 'queryHotel',
+  data () {
+    return {
+      responseResult: [],
+      sort: {
+        zhineng: 1,
+        juli: 2,
+        renqi: 3,
+        kongfang: 4
       }
-    },
+    }
+  },
 
-    methods: {
-      queryhotel (data) {
-        this.$axios.get('/api/queryhotel', {params: {
-            flag: data
-          }
-        }).then(response => {
-          this.responseResult = response.data
-          for (let i in response.data.length) {
-            this.responseResult.push(response.data[i])
-          }
-        }).catch(fail => {
-          this.responseResult = '请求失败'
-        })
-      },
+  methods: {
+    queryhotel (data) {
+      this.$axios.get('/api/queryhotel', {params: {
+        flag: data
+      }
+      }).then(response => {
+        this.responseResult = response.data
+        for (let i in response.data.length) {
+          this.responseResult.push(response.data[i])
+        }
+      }).catch(fail => {
+        this.responseResult = '请求失败'
+      })
     }
   }
+}
 </script>
 
 <style scoped>
