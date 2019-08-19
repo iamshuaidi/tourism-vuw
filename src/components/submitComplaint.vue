@@ -3,7 +3,7 @@
           xmlns:resize="http://www.w3.org/1999/xhtml" xmlns:cols="http://www.w3.org/1999/xhtml"
           xmlns:row="http://www.w3.org/1999/xhtml">
   <div>
-      <div class="cquery">
+      <div id= "tousuchaxun" class="cquery">
         <button class="btquery"  @click="query">投诉查询</button>
       </div>
     <form @submit.prevent="submit" ref="myform" :model="form">
@@ -26,11 +26,13 @@
         <input id="code" type="text" name="verify" />
         <button @click="send_code" class="verify_code">发送验证码</button>
       </p>-->
+      <div id="tousushiyou">
       <p>
-        <label for="editor" prop="desc">投诉事由:</label>
+        <label for="editor" prop="desc" >投诉事由:</label>
       </p>
         <textarea id="editor" style="resize:none" rows="12" cols="100" placeholder="请输入" maxlength="500" @input = "descInput" v-model="desc" required="required" />
         <span>{{remnant}}/500</span>
+      </div>
       <!--<p>
          <tinymce-editor id="editor" v-model="msg" :disabled="disabled"
                         @onClick="onClick" ref="editor" align="left"></tinymce-editor>
@@ -38,7 +40,7 @@
          <button @click="disabled = true">禁用</button>
       </p>-->
     </fieldset>
-    <div class="csubmit">
+    <div id="tijiao" class="csubmit">
       <input type="submit" class="btsubmit" value="提交"/>
     </div>
     </form>
@@ -142,4 +144,20 @@ export default {
      width: 150px;
      vertical-align: top;
    } */
+  #tousuchaxun {
+    position:absolute;
+    left: 1000px;
+  }
+  #tousushiyou {
+    position:absolute;
+    top: 200px;
+    left: 400px;
+  }
+  #tijiao {
+    position:absolute;
+    top: 450px;
+    left: 600px;
+
+  }
+
 </style>
