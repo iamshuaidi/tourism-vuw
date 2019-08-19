@@ -158,7 +158,6 @@ export default {
         plan: value3
       }).then(res => {
         console.log(res)
-        if (res.data.message === '') {
           for (var i in this.peo) {
             this.$axios.post('/api/assignPlan', {
               time: this.peo[i].time,
@@ -170,7 +169,7 @@ export default {
               })
             })
           }
-        }
+
       })
     },
     Jump4 () {

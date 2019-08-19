@@ -159,11 +159,9 @@ export default {
       }
       this.$axios.post('/api/createWarning', qs.stringify(entity)).then(res => {
         console.log(res)
-        if (res.data.message === '') {
           this.$router.push({
             name: '首页地址'
           })
-        }
       })
     }
 
