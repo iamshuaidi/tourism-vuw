@@ -140,12 +140,9 @@ export default {
       }
       this.$axios.post('/api/addPerson', qs.stringify(entity)).then(res => {
         console.log(res)
-        if (res.data.message === '更新考试日期成功') {
-          this.$Message.success('添加成功!')
           this.$router.push({
             name: 'PersonnelManagement'
           })
-        }
       }).catch(res => {
         this.$Message.error('添加失败')
       })
