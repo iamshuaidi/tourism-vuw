@@ -167,12 +167,10 @@ export default {
       console.log(entity)
       this.$axios.post('/api/editPerson', qs.stringify(entity)).then(res => {
       }).then(res => {
-        if (res.data.message === '') {
-          this.$Message.success('修改成功!')
           this.$router.push({
             name: 'PersonnelManagement'
           })
-        }
+
       })
     }
 }

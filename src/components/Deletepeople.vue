@@ -144,13 +144,9 @@ export default {
         id: this.data1.id
       }
       }).then(res => {
-        console.log(res)
-        if (res.data.message === '') {
-          this.$Message.success('删除成功!')
           this.$router.push({
             name: 'PersonnelManagement'
           })
-        }
       })
     }
   }
