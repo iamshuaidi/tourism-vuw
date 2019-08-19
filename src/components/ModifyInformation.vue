@@ -167,6 +167,11 @@ export default {
       }
       console.log(entity)
       this.$axios.post('/api/editPerson', qs.stringify(entity)).then(res => {
+      }).then(res => {
+          this.$router.push({
+            name: 'PersonnelManagement'
+          })
+
           this.$router.push({
             name: 'PersonnelManagement'
           })

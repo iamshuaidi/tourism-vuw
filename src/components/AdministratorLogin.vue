@@ -83,16 +83,15 @@
     </div>
 
     <!-- 返回 (图片) -->
-    <div id="u310" class="ax_default image" data-label="返回">
-      <img id="u310_img" class="img " src="../images/我要投诉/u63.png"/>
+    <div id="u310" class="ax_default image" data-label="返回" @click="tiaozhuan">
+      <img id="u310_img" class="img " src="../images/我要投诉/u63.png" @click="tiaozhuan"/>
       <!-- Unnamed () -->
-      <div id="u311" class="text" style="display: none; visibility: hidden">
+      <div id="u311" class="text" style="display: none; visibility: hidden" @click="tiaozhuan">
         <p><span></span></p>
       </div>
     </div>
 
     <!-- 输入用户名 (文本框) -->
-
 
     <p style="font-size: 20px;color: deepskyblue;">3333{{message}}</p>
     <div id="u312" class="ax_default text_field" data-label="输入用户名">
@@ -119,43 +118,49 @@
 
 import qs from 'qs'
 
-  export default {
-    name: 'AdministratorLogin',
-    data () {
-      return {
-        responseResult: [],
-        loginInfo: {
-          phone: '',
-          password: ''
-        },
-        message: '',
-        date: '',
-        admin: [],
-        name: ''
-      }
-    },
-
-    methods: {
-      login () {
-        let entity = {
-          phone: this.loginInfo.phone,
-          password: this.loginInfo.password
-        }
-
-        this.$axios.post('/api/login', qs.stringify(entity)).then(response => {
-          this.responseResult = response.data
-            for (let i in response.data.length) {
-              this.responseResult.push(response.data[i])
-            }
-            this.$router.push('/admin')
-            localStorage.setItem('admin', JSON.stringify(this.responseResult.admin))
-        }).catch(failed => {
-          this.responseResult = '请求失败'
-        })
-      }
+export default {
+  name: 'AdministratorLogin',
+  data () {
+    return {
+      responseResult: [],
+      loginInfo: {
+        phone: '',
+        password: ''
+      },
+      message: '',
+      date: '',
+      admin: [],
+      name: ''
     }
+  },
 
+  methods: {
+    login () {
+      let entity = {
+        phone: this.loginInfo.phone,
+        password: this.loginInfo.password
+      }
+
+      this.$axios.post('/api/login', qs.stringify(entity)).then(response => {
+        this.responseResult = response.data
+        for (let i in response.data.length) {
+          this.responseResult.push(response.data[i])
+        }
+        this.$router.push('/admin')
+        localStorage.setItem('admin', JSON.stringify(this.responseResult.admin))
+      }).catch(failed => {
+        this.responseResult = '请求失败'
+      })
+    },
+    tiaozhuan () {
+      this.$router.push({
+        name: 'welcome'
+      })
+    }
   }
+
+
+}
 
 </script>
 <style scoped>
