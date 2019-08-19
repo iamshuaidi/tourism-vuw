@@ -151,7 +151,7 @@ export default {
       var value1 = document.getElementById('u624_input').value
       var value2 = document.getElementById('u617_input').value
       var value3 = document.getElementById('u616_input').value
-      this.$axios.post(this.$host + '', {
+      this.$axios.post('/api/createWarning', {
         type: value1,
         title: value2,
         plan: value3,

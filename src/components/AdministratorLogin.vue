@@ -92,17 +92,20 @@
     </div>
 
     <!-- 输入用户名 (文本框) -->
+
+
+    <p style="font-size: 20px;color: deepskyblue;">3333{{message}}</p>
     <div id="u312" class="ax_default text_field" data-label="输入用户名">
-      <input id="u312_input" type="text" value="输入用户名"/>
+      <input id="u312_input" type="text" v-model="loginInfo.phone" placeholder="请输入用户名"/>
     </div>
 
     <!-- 输入密码 (文本框) -->
     <div id="u313" class="ax_default text_field" data-label="输入密码">
-      <input id="u313_input" type="text" value="输入密码"/>
+      <input id="u313_input" type="password" v-model="loginInfo.password" placeholder="请输入密码"/>
     </div>
 
     <!-- 登录 (矩形) -->
-    <div id="u314" class="ax_default label" data-label="登录">
+    <div id="u314" class="ax_default label" data-label="登录" v-on:click="login">
       <div id="u314_div" class=""></div>
       <!-- Unnamed () -->
       <div id="u315" class="text" style="visibility: visible;">
@@ -113,6 +116,51 @@
 </template>
 
 <script type="text/javascript" >
+
+  import qs from 'qs'
+
+  export default {
+    name: 'AdministratorLogin',
+    data () {
+      return {
+        responseResult: [],
+        loginInfo: {
+          phone: '',
+          password: ''
+        },
+        message: '',
+        date: '',
+        admin: [],
+        name: ''
+      }
+    },
+
+    methods: {
+      login () {
+        let entity = {
+          phone: this.loginInfo.phone,
+          password: this.loginInfo.password
+        }
+
+        this.$axios.post('/api/login', qs.stringify(entity)).then(response => {
+          this.responseResult = response.data
+          this.message = response.data.message
+          if (this.message === 'OK') {
+            for (let i in response.data.length) {
+              this.responseResult.push(response.data[i])
+            }
+            /* this.$router.push({ path: '/admin', query: {admin: this.responseResult.admin} }) */
+            // this.$router.push({name:'/home',params:{admin:response.data}})
+            this.$router.push('/admin')
+            localStorage.setItem('admin', JSON.stringify(this.responseResult.admin))
+          }
+        }).catch(failed => {
+          this.responseResult = '请求失败'
+        })
+      }
+    }
+
+  }
 
 </script>
 <style scoped>

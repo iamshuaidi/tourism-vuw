@@ -88,7 +88,7 @@
       </div>
 
       <!-- 景区数据中心 (矩形) -->
-      <div id="u333" class="ax_default label" data-label="景区数据中心">
+      <div id="u333" class="ax_default label" data-label="景区数据中心" @click="queryTicket">
         <div id="u333_div" class=""></div>
         <!-- Unnamed () -->
         <div id="u334" class="text" style="visibility: visible;">
@@ -190,7 +190,7 @@
       </div>
 
       <!-- 投诉处理中心 (矩形) -->
-      <div id="u356" class="ax_default label" data-label="投诉处理中心">
+      <div id="u356" class="ax_default label" data-label="投诉处理中心" v-on:click="dealComplaint">
         <div id="u356_div" class=""></div>
         <!-- Unnamed () -->
         <div id="u357" class="text" style="visibility: visible;">
@@ -267,8 +267,18 @@ export default {
       this.$router.push({
         name: 'WarningCenter'
       })
+    },
+    queryTicket() {
+      this.$router.push({
+        name: 'queryTicket'
+      })
+    },
+
+    dealComplaint() {
+      this.$router.push({
+        name: 'dealComplaint'
+      })}
     }
-  }
 }
 </script>
 
