@@ -50,18 +50,10 @@
       </div>
     </div>
 
-
-
     <!-- 新增预案按钮 (矩形) -->
     <Button id="u466" class="ax_default primary_button" data-label="新增预案按钮" @click="j1()">
       <div id="u466_div" class="">新增预案</div>
     </Button>
-
-
-
-
-
-
 
     <!-- 预案内容 (矩形) -->
     <div id="u472" class="ax_default label" data-label="预案内容">
@@ -83,11 +75,11 @@
 
     <Table id="t1" border :columns="columns1" :data="data1" height="200">
       <template slot-scope="{ row, index }" slot="Action">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<Button id="b1" size="large" @click="delpeo(index)">删除</Button>
+        <Button id="b1" size="large" @click="delpeo(index)">删除</Button>
       </template>
     </Table>
 
-    <Table id="t2" border :columns="columns2" :data="data2" height="200">
+    <Table id="t2" height="200" border :columns="columns2" :data="data2">
       <template slot-scope="{ row, index }" slot="type">
         <Input type="text" v-model="edittype" v-if="editIndex === index" />
         <span v-else>{{ row.type }}</span>
@@ -110,7 +102,7 @@
         </div>
         <div v-else>
           <Button size="large" @click="edit(row, index)">修改</Button>
-          <Button size="large" @click="delplan(row, index)">删除</Button>
+          <Button size="large" @click="delplan(index)">删除</Button>
         </div>
       </template>
     </Table>
@@ -118,6 +110,7 @@
   </div>
 </template>
 <script>
+import qs from 'qs'
 export default {
   data () {
     return {
@@ -175,19 +168,19 @@ export default {
   },
   created () {
     this.$axios.get('/api/showPlans').then(res => {
-        var d = res.data
-        this.data1 = d
-        //for(let i in res.data.length){
-         //   this.data1.push(res.data[i])
-     //   }
-        console.log(this.data1)
-      // this.$axios.get('/api/showPerson').then(res => {
-      //   this.data2 = res.data
-      //     for(let i in res.data.length){
-      //         this.data2.push(res.data[i])
-      //     }
-      //
-      // })
+      // console.log(res)
+      this.data2 = res.data
+      // for(let i in res.data) {
+      //     this.data1.push(res.data[i])
+      //     console.log(this.data1)
+      // }
+      this.$axios.get('/api/showPerson').then(res => {
+        this.data1 = res.data
+        // for(let i in res.data) {
+        //     console.log(2)
+        //     this.data2.push(res.data[i])
+        // }
+      })
     })
   },
 
@@ -213,10 +206,20 @@ export default {
       this.data2[index].title = this.edittitle
       this.data2[index].plan = this.editplan
       this.editIndex = -1
+      // console.log(this.data2[index].id)
+      let entity = {
+        'id': this.data2[index].id,
+        'type': this.edittype,
+        'title': this.edittitle,
+        'plan': this.editplan
+      }
+      this.$axios.post('/api/editPlan', qs.stringify(entity)).then(res => {
+        console.log(res)
+      })
     },
     delplan (index) {
       this.data2.splice(index, 1)
-      this.$axios.post(this.$host + '?id=' + this.data2.id).then(res => {
+      this.$axios.post('/api/deletePlan?id=' + this.data2.id).then(res => {
         if (res.data.message === '') {
           this.$Message.info('删除成功')
         }
@@ -224,7 +227,7 @@ export default {
     },
     delpeo (index) {
       this.data1.splice(index, 1)
-      this.$axios.post(this.$host + '?id=' + this.data1.id).then(res => {
+      this.$axios.post('/api/deletePersonAssign?id=' + this.data1.id).then(res => {
         if (res.data.message === '') {
           this.$Message.info('删除成功')
         }

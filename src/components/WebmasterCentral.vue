@@ -133,7 +133,7 @@
       <div id="u342_div" class=""></div>
       <!-- Unnamed () -->
       <div id="u343" class="text" style="visibility: visible;">
-        <p><span>管理员： </span></p>
+        <p><span>管理员： {{admin.name}}</span></p>
       </div>
     </div>
 
@@ -239,9 +239,13 @@ export default {
   data () {
     return {
       total: 1,
-      name: '5'
+      name: '5',
+      admin:''
     }
   },
+mounted () {
+    this.admin = JSON.parse(localStorage.getItem("admin"))
+},
   created () {
     this.getParams()
     document.getElementById('name').innerHTML = " " + this.name

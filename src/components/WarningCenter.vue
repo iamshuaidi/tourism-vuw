@@ -124,12 +124,13 @@
     </div>
     <!--日期选择-->
     <div id="time1">
-    <DatePicker type="date" placeholder="Select date" v-model="value4"></DatePicker>
+        <DatePicker type="date" placeholder="Select date" v-model="value4"></DatePicker>
     </div>
 
   </div>
 </template>
 <script>
+  import qs from 'qs'
 export default {
   data () {
     return {
@@ -151,18 +152,16 @@ export default {
       var value1 = document.getElementById('u624_input').value
       var value2 = document.getElementById('u617_input').value
       var value3 = document.getElementById('u616_input').value
-      this.$axios.post('/api/createWarning', {
-        type: value1,
-        title: value2,
-        plan: value3,
-        time: this.value4
-      }).then(res => {
+      let entity = {
+        'type': value1,
+        'title': value2,
+        'content': value3
+      }
+      this.$axios.post('/api/createWarning', qs.stringify(entity)).then(res => {
         console.log(res)
-        if (res.data.message === '') {
           this.$router.push({
-            name: '111111'
+            name: '首页地址'
           })
-        }
       })
     }
 
@@ -771,6 +770,5 @@ export default {
     top: 450px;
     left: 510px;
   }
-
 
 </style>

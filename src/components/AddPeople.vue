@@ -139,9 +139,10 @@ export default {
         'phone': value4
       }
       this.$axios.post('/api/addPerson', qs.stringify(entity)).then(res => {
-          this.$router.push({
-            name: 'PersonnelManagement'
-          })
+        console.log(res)
+        this.$router.push({
+          name: 'PersonnelManagement'
+        })
       }).catch(res => {
         this.$Message.error('添加失败')
       })

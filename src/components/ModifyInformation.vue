@@ -105,7 +105,7 @@
 
     <!-- 姓名框 (文本框) -->
     <div id="u864" class="ax_default text_field" data-label="姓名框">
-      <input id="u864_input" type="text" v-model="this.data1.name"></input>
+      <input id="u864_input" type="text" v-model="this.data1.name"/>
     </div>
 
     <!-- 联系电话框 (文本框) -->
@@ -137,8 +137,8 @@ export default {
   methods: {
     getParams () {
       this.data1 = this.$route.query.data1
-      for(let i in this.$route.query.data1.length){
-          this.data1.push(this.$route.query.data1[i])
+      for (let i in this.$route.query.data1.length) {
+        this.data1.push(this.$route.query.data1[i])
       }
     },
 
@@ -159,10 +159,11 @@ export default {
       var value4 = document.getElementById('u865_input').value
       console.log(value1)
       let entity = {
-        'job' : value1,
-        'name' : value2,
-        'gender' : value3,
-        'phone': value4
+        'job': value1,
+        'name': value2,
+        'gender': value3,
+        'phone': value4,
+        'id': this.data1.id
       }
       console.log(entity)
       this.$axios.post('/api/editPerson', qs.stringify(entity)).then(res => {
@@ -171,9 +172,14 @@ export default {
             name: 'PersonnelManagement'
           })
 
+          this.$router.push({
+            name: 'PersonnelManagement'
+          })
       })
     }
-}
+  },
+  mounted () {
+  }
 }
 </script>
 <style scoped>
