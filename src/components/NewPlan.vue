@@ -136,10 +136,10 @@ export default {
     }
   },
   created () {
-      this.$axios.get('/showPerson').then(res => {
-          this.peopleList = res.data.data.list
-      })
-      console.log(res)
+    this.$axios.get('/showPerson').then(res => {
+      this.peopleList = res.data.data.list
+    })
+    console.log(res)
   },
 
   methods: {

@@ -133,19 +133,16 @@ export default {
       var value3 = document.getElementById('u889_input').value
       var value4 = document.getElementById('u891_input').value
       let entity = {
-        'job' : value1,
-        'name' : value2,
-        'gender' : value3,
+        'job': value1,
+        'name': value2,
+        'gender': value3,
         'phone': value4
       }
       this.$axios.post('/api/addPerson', qs.stringify(entity)).then(res => {
         console.log(res)
-        if (res.data.message === '更新考试日期成功') {
-          this.$Message.success('添加成功!')
-          this.$router.push({
-            name: 'PersonnelManagement'
-          })
-        }
+        this.$router.push({
+          name: 'PersonnelManagement'
+        })
       }).catch(res => {
         this.$Message.error('添加失败')
       })
@@ -576,7 +573,5 @@ export default {
     width:113px;
     white-space:nowrap;
   }
-
-
 
 </style>

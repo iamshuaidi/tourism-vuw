@@ -70,8 +70,6 @@
       添加人员
     </Button>
 
-
-
     <Table id="t1" height="250" border :columns="columns1" :data="data1">
       <template slot-scope="{ row, index }" slot="Action">
         <Button id="b1" size="large" @click="Jump2(index)">修改信息</Button>&nbsp;&nbsp;&nbsp;
@@ -116,23 +114,23 @@ export default {
     this.$axios.get('/api/showPerson').then(res => {
       console.log(res)
       this.data1 = res.data
-        for(let i in this.res.data.length){
-            this.data1.push(res.data[i])
-        }
+      for (let i in this.res.data.length) {
+        this.data1.push(res.data[i])
+      }
     })
   },
   methods: {
-    Jump1() {
+    Jump1 () {
       this.$router.push({
         name: 'AddPeople'
       })
     },
-    Jump2(index) {
+    Jump2 (index) {
       this.$router.push({
         name: 'ModifyInformation',
-          query : {
-            data1: this.data1[index]
-          }
+        query: {
+          data1: this.data1[index]
+        }
       })
     },
     Jump3 (index) {

@@ -51,13 +51,11 @@
         </div>
       </div>
 
-      <Table id="t1"  border :columns="columns1" :data="data1" height="550">
+      <Table id="t1"  border :columns="columns1" :data="data1" height="555">
         <template slot-scope="{ row, index }" slot="Action">
-          <Button id="b1" size="large" @click="Jump1()">查看详情</Button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <Button id="b2" size="large" @click="Jump3(index)">停止预警</Button>
+          <Button size="large" @click="Jump3(index)">停止预警</Button>
         </template>
       </Table>
-
 
     </div>
   </div>
@@ -70,17 +68,22 @@ export default {
         {
           title: '标题',
           key: 'title',
-          width: 250
+          width: 150
         },
         {
           title: '类型',
           key: 'type',
-          width: 250
+          width: 150
         },
         {
           title: '时间',
           key: 'time',
-          width: 350
+          width: 200
+        },
+        {
+          title: '内容',
+          key: 'content',
+          width: 472
         },
         {
           title: '状态',
@@ -90,7 +93,7 @@ export default {
         {
           title: '操作',
           slot: 'Action',
-          width: 300
+          width: 200
         }
       ],
       data1: [],
@@ -118,11 +121,12 @@ export default {
       })
     },
     Jump3 (index) {
+      this.data1[index].state = '停止预警'
       this.$axios.get('/api/stopWarning', { params: {
         id: this.data1[index].id
       }
       }).then(res => {
-        alert(id)
+        // alert(id)
         this.$router.push({
           name: 'WarningRecord'
         })
@@ -1154,8 +1158,13 @@ export default {
   }
   #t1 {
     position:absolute;
-    top:166px;
+    top:110px;
+  }
 
+  #b2 {
+    position:absolute;
+    top:200px;
+    left: 500px;
   }
 
 </style>
