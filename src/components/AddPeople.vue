@@ -133,9 +133,9 @@ export default {
       var value3 = document.getElementById('u889_input').value
       var value4 = document.getElementById('u891_input').value
       let entity = {
-        'job': value1,
-        'name': value2,
-        'gender': value3,
+        'job' : value1,
+        'name' : value2,
+        'gender' : value3,
         'phone': value4
       }
       this.$axios.post('/api/addPerson', qs.stringify(entity)).then(res => {
@@ -573,5 +573,7 @@ export default {
     width:113px;
     white-space:nowrap;
   }
+
+
 
 </style>

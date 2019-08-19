@@ -117,7 +117,7 @@ export default {
   },
   created () {
     this.getParams()
-    console.log(this.data1)
+      console.log(this.data1)
     // document.getElementById('u914_input').innerHTML = " " + this.data1.job
     // document.getElementById('u915_input').innerHTML = " " + this.data1.name
     // document.getElementById('u916_input').innerHTML = " " + this.data1.gender
@@ -129,9 +129,10 @@ export default {
   methods: {
     getParams () {
       this.data1 = this.$route.query.data1
-      for (let i in this.$route.query.data1.length) {
-        this.data1.push(this.$route.query.data1[i])
-      }
+        for(let i in this.$route.query.data1.length){
+          this.data1.push(this.$route.query.data1[i])
+        }
+
     },
     Jump1 () {
       this.$router.push({
@@ -143,10 +144,10 @@ export default {
         id: this.data1.id
       }
       }).then(res => {
-        console.log(res)
-        this.$router.push({
-          name: 'PersonnelManagement'
-        })
+          this.$router.push({
+            name: 'PersonnelManagement'
+          })
+
       })
     }
   }

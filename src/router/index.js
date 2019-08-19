@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import queryHotel from '@/components/queryHotel'
 import queryPark from '@/components/queryPark'
-import login from '@/components/login'
 import admin from '@/components/admin'
 import queryTicket from '@/components/queryTicket'
 import submitComplaint from '@/components/submitComplaint'
@@ -16,6 +15,8 @@ import queryAlarm from '@/components/queryAlarm'
 import showAlarm from '@/components/showAlarm'
 import dealAlarm from '@/components/dealAlarm'
 import replyAlarm from '@/components/replyAlarm'
+import AdministratorLogin from '@/components/AdministratorLogin'
+import WebmasterCentral from '@/components/WebmasterCentral'
 
 Vue.use(Router)
 
@@ -33,14 +34,14 @@ export default new Router({
     },
     {
       path: '/login',
-      name: 'login',
-      component: login
+      name: 'AdministratorLogin',
+      component: AdministratorLogin
 
     },
     {
       path: '/admin',
       name: 'admin',
-      component: admin
+      component: WebmasterCentral
     },
     {
       path: '/queryTicket',

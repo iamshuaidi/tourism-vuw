@@ -88,7 +88,7 @@
       </div>
 
       <!-- 景区数据中心 (矩形) -->
-      <div id="u333" class="ax_default label" data-label="景区数据中心">
+      <div id="u333" class="ax_default label" data-label="景区数据中心" @click="queryTicket">
         <div id="u333_div" class=""></div>
         <!-- Unnamed () -->
         <div id="u334" class="text" style="visibility: visible;">
@@ -133,7 +133,7 @@
       <div id="u342_div" class=""></div>
       <!-- Unnamed () -->
       <div id="u343" class="text" style="visibility: visible;">
-        <p><span>管理员： </span></p>
+        <p><span>管理员： {{admin.name}}</span></p>
       </div>
     </div>
 
@@ -190,7 +190,7 @@
       </div>
 
       <!-- 投诉处理中心 (矩形) -->
-      <div id="u356" class="ax_default label" data-label="投诉处理中心">
+      <div id="u356" class="ax_default label" data-label="投诉处理中心" v-on:click="dealComplaint">
         <div id="u356_div" class=""></div>
         <!-- Unnamed () -->
         <div id="u357" class="text" style="visibility: visible;">
@@ -239,9 +239,13 @@ export default {
   data () {
     return {
       total: 1,
-      name: '5'
+      name: '5',
+      admin:''
     }
   },
+mounted () {
+    this.admin = JSON.parse(localStorage.getItem("admin"))
+},
   created () {
     this.getParams()
     document.getElementById('name').innerHTML = " " + this.name
@@ -267,8 +271,18 @@ export default {
       this.$router.push({
         name: 'WarningCenter'
       })
+    },
+    queryTicket() {
+      this.$router.push({
+        name: 'queryTicket'
+      })
+    },
+
+    dealComplaint() {
+      this.$router.push({
+        name: 'dealComplaint'
+      })}
     }
-  }
 }
 </script>
 

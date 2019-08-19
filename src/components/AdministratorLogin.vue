@@ -46,7 +46,14 @@
       </div>
     </div>
 
-
+    <!-- 验证码登录 (矩形) -->
+    <div id="u302" class="ax_default label" data-label="验证码登录">
+      <div id="u302_div" class=""></div>
+      <!-- Unnamed () -->
+      <div id="u303" class="text" style="visibility: visible;">
+        <p><span>验证码登录</span></p>
+      </div>
+    </div>
 
     <!-- 用户名图片 (图片) -->
     <div id="u304" class="ax_default image" data-label="用户名图片">
@@ -67,9 +74,13 @@
     </div>
 
     <!-- 登录 (矩形) -->
-    <Button id="u308" class="ax_default primary_button" data-label="登录">
-      登录
-    </Button>
+    <div id="u308" class="ax_default primary_button" data-label="登录">
+      <div id="u308_div" class=""></div>
+      <!-- Unnamed () -->
+      <div id="u309" class="text" style="display: none; visibility: hidden">
+        <p><span></span></p>
+      </div>
+    </div>
 
     <!-- 返回 (图片) -->
     <div id="u310" class="ax_default image" data-label="返回">
@@ -81,20 +92,70 @@
     </div>
 
     <!-- 输入用户名 (文本框) -->
+
+
+    <p style="font-size: 20px;color: deepskyblue;">3333{{message}}</p>
     <div id="u312" class="ax_default text_field" data-label="输入用户名">
-      <input id="u312_input" type="text" value="输入用户名"/>
+      <input id="u312_input" type="text" v-model="loginInfo.phone" placeholder="请输入用户名"/>
     </div>
 
     <!-- 输入密码 (文本框) -->
     <div id="u313" class="ax_default text_field" data-label="输入密码">
-      <input id="u313_input" type="text" value="输入密码"/>
+      <input id="u313_input" type="password" v-model="loginInfo.password" placeholder="请输入密码"/>
     </div>
 
-
+    <!-- 登录 (矩形) -->
+    <div id="u314" class="ax_default label" data-label="登录" v-on:click="login">
+      <div id="u314_div" class=""></div>
+      <!-- Unnamed () -->
+      <div id="u315" class="text" style="visibility: visible;">
+        <p><span>登录</span></p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script type="text/javascript" >
+
+import qs from 'qs'
+
+  export default {
+    name: 'AdministratorLogin',
+    data () {
+      return {
+        responseResult: [],
+        loginInfo: {
+          phone: '',
+          password: ''
+        },
+        message: '',
+        date: '',
+        admin: [],
+        name: ''
+      }
+    },
+
+    methods: {
+      login () {
+        let entity = {
+          phone: this.loginInfo.phone,
+          password: this.loginInfo.password
+        }
+
+        this.$axios.post('/api/login', qs.stringify(entity)).then(response => {
+          this.responseResult = response.data
+            for (let i in response.data.length) {
+              this.responseResult.push(response.data[i])
+            }
+            this.$router.push('/admin')
+            localStorage.setItem('admin', JSON.stringify(this.responseResult.admin))
+        }).catch(failed => {
+          this.responseResult = '请求失败'
+        })
+      }
+    }
+
+  }
 
 </script>
 <style scoped>
@@ -220,7 +281,7 @@
   #u298 {
     position:absolute;
     left:487px;
-    top:40px;
+    top:10px;
     width:337px;
     height:44px;
     font-family:'Arial Negreta', 'Arial Normal', 'Arial';
@@ -232,7 +293,7 @@
   #u299 {
     position:absolute;
     left:0px;
-    top:-30px;
+    top:0px;
     width:337px;
     white-space:nowrap;
   }
@@ -254,7 +315,7 @@
   }
   #u300 {
     position:absolute;
-    left:1010px;
+    left:941px;
     top:212px;
     width:81px;
     height:14px;
@@ -364,7 +425,6 @@
     width:207px;
     height:48px;
     font-size:28px;
-    background-color:rgba(255, 102, 0, 0.858823529411765);
   }
   #u309 {
     position:absolute;
