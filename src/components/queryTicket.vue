@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="header-title">
-      <span><router-link to="/"><button style="font-size: 30px">返回首页</button></router-link></span>
+      <span><router-link to="/admin"><button style="font-size: 30px">返回</button></router-link></span>
       <div class="header-title-text">票务查询</div>
     </div>
 
@@ -26,48 +26,47 @@
   </div>
 </template>
 
-
 <script>
-  import qs from 'qs'
-  import {formatDate} from '@/common/date'
+import qs from 'qs'
+import {formatDate} from '@/common/date'
 
-  export default {
-    name: 'queryTicket',
-    data(){
-      return{
-        responseResult: [],
-        time:{
-          start:'',
-          end:''
-        },
-    test:'22'
-      }
-    },
-    methods: {
+export default {
+  name: 'queryTicket',
+  data () {
+    return {
+      responseResult: [],
+      time: {
+        start: '',
+        end: ''
+      },
+      test: '22'
+    }
+  },
+  methods: {
 
-      queryTicket () {
-        this.test = new Date(this.time.start)
-        this.$axios.get('/api/queryticket', {params: {
-            start:this.time.start.toString(),
-            end:this.time.end.toString()
-          }
-        }).then(response => {
-          this.responseResult = response.data
-          for (let i in response.data.length) {
-            this.responseResult.push(response.data[i])
-          }
-        }).catch(fail => {
-          this.responseResult = '请求失败'
-        })
+    queryTicket () {
+      this.test = new Date(this.time.start)
+      this.$axios.get('/api/queryticket', {params: {
+        start: this.time.start.toString(),
+        end: this.time.end.toString()
       }
-    },
-    filters: {
-      formatDate(time){
-        let date = new Date(time)
-        return formatDate(date, 'yyyy-MM-dd hh:mm:ss')
-      }
+      }).then(response => {
+        this.responseResult = response.data
+        for (let i in response.data.length) {
+          this.responseResult.push(response.data[i])
+        }
+      }).catch(fail => {
+        this.responseResult = '请求失败'
+      })
+    }
+  },
+  filters: {
+    formatDate (time) {
+      let date = new Date(time)
+      return formatDate(date, 'yyyy-MM-dd hh:mm:ss')
     }
   }
+}
 </script>
 
 <style scoped>
@@ -89,7 +88,6 @@
     top: 20px;
     bottom: 20px;
   }
-
 
   *{
     margin: 0;
