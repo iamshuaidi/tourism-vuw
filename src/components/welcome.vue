@@ -32,9 +32,7 @@ export default {
     return {
       backgroundDiv: {
         backgroundImage: 'url(' + require('../assets/background.png') + ')'
-      },
-      warningList: [],
-      
+      }
     }
   },
   methods: {

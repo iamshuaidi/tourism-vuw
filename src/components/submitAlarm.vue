@@ -49,7 +49,6 @@
 <script>
 import axios from 'axios'
 import qs from 'qs'
-
 export default {
   data () {
     return {
@@ -70,7 +69,6 @@ export default {
       if (!this.desc) {
         return false
       }
-
       if (!this.name) {
         return false
       }
@@ -104,7 +102,7 @@ export default {
       this.$router.push('/queryAlarm')
     }
     /*  send_code () {
-        } */
+          } */
   }
 }
 </script>
