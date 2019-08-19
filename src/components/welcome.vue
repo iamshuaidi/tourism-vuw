@@ -1,27 +1,32 @@
 <template xmlns:width="http://www.w3.org/1999/xhtml">
   <div class="middle" :style="backgroundDiv">
-    <h1>
-      旅游管理服务平台
-    </h1>
-    <div class="cbutton">
-      <p><button class="btComplaint" @click="complaint">我要投诉</button></p>
-      <p><button class="btAlarm" @click="alarm">紧急报案</button></p>
-      <p><button class="btLogin" @click="login">管理员登录</button></p>
+    <div id="timu" style="font-size: 48px">
+      <b>旅游管理服务平台</b>
     </div>
+    <div class="cbutton">
+      <p><button class="btComplaint" @click="complaint" style="font-size:36px">我要投诉</button></p>
+      <p><button class="btAlarm" @click="alarm" style="font-size:36px" >紧急报案</button></p>
+      <p><button class="btLogin" @click="login" style="font-size:36px">管理员登录</button></p>
+    </div>
+
+    <div id="jiudian">
     <d3>
-    <img src="../assets/hotellogo.png" height="100" width="120">
-      <button class="btHotel" @click="hotel">酒店空房查询</button>
+    <img src="../assets/hotellogo.png" height="150" width="200">
+      <button class="btHotel" @click="hotel" style="font-size:28px">酒店空房查询</button>
     </d3>
+  </div>
+    <div id="chewei">
     <d4>
-      <img src="../assets/parklogo.png" height="90" width="90">
-      <button class="btPark" @click="park">停车场空车位查询</button>
+      <img src="../assets/parklogo.png" height="140" width="180">
+      <button class="btPark" @click="park" style="font-size:28px">停车场空车位查询</button>
     </d4>
-    <d5>
+    </div>
+   <!-- <d5>
       <p>
         <label class="lbWarn" for="warning">预警信息</label>
       </p>
       <textarea id="warning" style="resize:none" rows="12" cols="50" maxlength="20000" placeholder="" v-model="desc" />
-    </d5>
+    </d5>-->
   </div>
 </template>
 
@@ -98,14 +103,14 @@ export default {
     background-color: #d6e9c6;
   }
   .btAlarm{
-    top: 40px;
+    top: 100px;
     right: 100px;
     position: absolute;
     margin-top: 30px;
     background-color: #d6e9c6;
   }
   .btLogin{
-    top: 80px;
+    top: 200px;
     right: 100px;
     position: absolute;
     margin-top: 30px;
@@ -121,12 +126,12 @@ export default {
   .btHotel{
     margin-top:5px;
     background-color: #f2dede;
-    width: 100px;
+    width: 200px;
   }
   d4{
     bottom: 250px;
     left: 600px;
-    width: 30px;
+    width: 200px;
     height: 30px;
     position: absolute;
   }
@@ -134,16 +139,32 @@ export default {
     margin-top: 15px;
     margin-left: 0px;
     background-color: #f2dede;
-    width: 130px;
+    width: 250px;
   }
   d5{
     bottom: 150px;
-    width: 100px;
+    width: 200px;
     height: 200px;
     position: absolute;
     right: 350px;
   }
   .lbWarn{
     color: #cc0000;
+  }
+  #timu {
+    position: absolute;
+    left: 600px;
+    top: 100px;
+  }
+  #jiudian {
+    position: absolute;
+    left: 200px;
+    top: 500px;
+  }
+
+  #chewei {
+    position: absolute;
+    left: 300px;
+    top: 500px;
   }
 </style>
