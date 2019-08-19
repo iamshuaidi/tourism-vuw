@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import login from './components/login'
 
 // 引用axios，并设置基础URL为后端服务api地址
 var axios = require('axios')
@@ -10,6 +11,8 @@ var axios = require('axios')
 // 将API方法绑定到全局
 Vue.prototype.$axios = axios
 Vue.config.productionTip = false
+Vue.prototype.adminTest = ''
+Vue.prototype.GLOBAL = 'tt'
 
 /* eslint-disable no-new */
 new Vue({
