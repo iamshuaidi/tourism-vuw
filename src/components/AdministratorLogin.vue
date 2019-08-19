@@ -46,14 +46,7 @@
       </div>
     </div>
 
-    <!-- 验证码登录 (矩形) -->
-    <div id="u302" class="ax_default label" data-label="验证码登录">
-      <div id="u302_div" class=""></div>
-      <!-- Unnamed () -->
-      <div id="u303" class="text" style="visibility: visible;">
-        <p><span>验证码登录</span></p>
-      </div>
-    </div>
+
 
     <!-- 用户名图片 (图片) -->
     <div id="u304" class="ax_default image" data-label="用户名图片">
@@ -74,13 +67,9 @@
     </div>
 
     <!-- 登录 (矩形) -->
-    <div id="u308" class="ax_default primary_button" data-label="登录">
-      <div id="u308_div" class=""></div>
-      <!-- Unnamed () -->
-      <div id="u309" class="text" style="display: none; visibility: hidden">
-        <p><span></span></p>
-      </div>
-    </div>
+    <Button id="u308" class="ax_default primary_button" data-label="登录">
+      登录
+    </Button>
 
     <!-- 返回 (图片) -->
     <div id="u310" class="ax_default image" data-label="返回">
@@ -101,14 +90,7 @@
       <input id="u313_input" type="text" value="输入密码"/>
     </div>
 
-    <!-- 登录 (矩形) -->
-    <div id="u314" class="ax_default label" data-label="登录">
-      <div id="u314_div" class=""></div>
-      <!-- Unnamed () -->
-      <div id="u315" class="text" style="visibility: visible;">
-        <p><span>登录</span></p>
-      </div>
-    </div>
+
   </div>
 </template>
 
@@ -238,7 +220,7 @@
   #u298 {
     position:absolute;
     left:487px;
-    top:10px;
+    top:40px;
     width:337px;
     height:44px;
     font-family:'Arial Negreta', 'Arial Normal', 'Arial';
@@ -250,7 +232,7 @@
   #u299 {
     position:absolute;
     left:0px;
-    top:0px;
+    top:-30px;
     width:337px;
     white-space:nowrap;
   }
@@ -272,7 +254,7 @@
   }
   #u300 {
     position:absolute;
-    left:941px;
+    left:1010px;
     top:212px;
     width:81px;
     height:14px;
@@ -382,6 +364,7 @@
     width:207px;
     height:48px;
     font-size:28px;
+    background-color:rgba(255, 102, 0, 0.858823529411765);
   }
   #u309 {
     position:absolute;

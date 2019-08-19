@@ -32,7 +32,9 @@ export default {
     return {
       backgroundDiv: {
         backgroundImage: 'url(' + require('../assets/background.png') + ')'
-      }
+      },
+      warningList: [],
+      
     }
   },
   methods: {
@@ -50,7 +52,21 @@ export default {
     },
     park () {
       this.$router.push('/queryPark')
-    }
+    },
+    getData () {
+      // 接收到a.vue页面传递的id,都是根据id调用，因此调用相同的showAlarm方法
+      let id = this.$route.params.id
+      axios.get('api/showAlarm', {
+        params: {
+          id
+        }
+      }).then((response) => {
+        this.alarm = response.data
+        console.log(response)
+      }).catch((error) => {
+        console.log(error)
+      })
+    },
   }
 }
 </script>
