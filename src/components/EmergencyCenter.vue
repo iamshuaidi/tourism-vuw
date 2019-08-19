@@ -74,7 +74,7 @@
     </div>
 
     <!-- 报案处理图 (图片) -->
-    <div id="u458" class="ax_default image" data-label="报案处理图">
+    <div id="u458" class="ax_default image" data-label="报案处理图" @click="j2">
       <img id="u458_img" class="img " src="../images/应急事件处置中心/报案处理图_u458.png"/>
       <!-- Unnamed () -->
       <div id="u459" class="text" style="display: none; visibility: hidden">
@@ -93,7 +93,7 @@ export default {
     },
     j2 () {
       this.$router.push({
-        name: 'WebmasterCentral'
+        name: 'dealAlarm'
       })
     }
   }
