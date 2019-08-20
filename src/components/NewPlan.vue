@@ -139,7 +139,7 @@ export default {
     this.$axios.get('/showPerson').then(res => {
       this.peopleList = res.data.data.list
     })
-    console.log(res)
+    // console.log(res)
   },
 
   methods: {
@@ -158,18 +158,17 @@ export default {
         plan: value3
       }).then(res => {
         console.log(res)
-          for (var i in this.peo) {
-            this.$axios.post('/api/assignPlan', {
-              time: this.peo[i].time,
-              per_id: this.peo[i].per_id,
-              plan_id: res.data.plan_id
-            }).then(res => {
-              this.$router.push({
-                name: 'EmergencyBank'
-              })
+        for (var i in this.peo) {
+          this.$axios.post('/api/assignPlan', {
+            time: this.peo[i].time,
+            per_id: this.peo[i].per_id,
+            plan_id: res.data.plan_id
+          }).then(res => {
+            this.$router.push({
+              name: 'EmergencyBank'
             })
-          }
-
+          })
+        }
       })
     },
     Jump4 () {

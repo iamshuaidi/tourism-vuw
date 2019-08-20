@@ -35,7 +35,7 @@
 
     <!-- 关闭 (图片) -->
     <div id="u876" class="ax_default image" data-label="关闭" @click="Jump1">
-      <img id="u876_img" class="img " src="../images/投诉协议/u81.png" @click="Jump1"/>
+      <img id="u876_img" class="img " src="../images/ComplaintAgreement/u81.png" @click="Jump1"/>
       <!-- Unnamed () -->
       <div id="u877" class="text" style="display: none; visibility: hidden" @click="Jump1">
         <p><span></span></p>

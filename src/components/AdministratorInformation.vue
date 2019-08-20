@@ -215,7 +215,7 @@
 
       <!-- Unnamed (图片) -->
       <div id="u772" class="ax_default image">
-        <img id="u772_img" class="img " src="../images/我要投诉/u31.png"/>
+        <img id="u772_img" class="img " src="../images/Complaint/u31.png"/>
         <!-- Unnamed () -->
         <div id="u773" class="text" style="display: none; visibility: hidden">
           <p><span></span></p>
@@ -287,7 +287,7 @@
 
       <!-- 返回 (图片) -->
       <div id="u788" class="ax_default image" data-label="返回">
-        <img id="u788_img" class="img " src="../images/我要投诉/u63.png"/>
+        <img id="u788_img" class="img " src="../images/Complaint/u63.png"/>
         <!-- Unnamed () -->
         <div id="u789" class="text" style="display: none; visibility: hidden">
           <p><span></span></p>

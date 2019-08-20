@@ -30,7 +30,7 @@
 
     <!-- Unnamed 关闭(图片) -->
     <div id="u902" class="ax_default image" @click="Jump1">
-      <img id="u902_img" class="img " src="../images/投诉协议/u81.png" @click="Jump1"/>
+      <img id="u902_img" class="img " src="../images/ComplaintAgreement/u81.png" @click="Jump1"/>
       <!-- Unnamed () -->
       <div id="u903" class="text" style="display: none; visibility: hidden" @click="Jump1">
         <p><span></span></p>
