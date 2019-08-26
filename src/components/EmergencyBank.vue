@@ -174,7 +174,10 @@ export default {
       //     this.data1.push(res.data[i])
       //     console.log(this.data1)
       // }
-      this.$axios.get('/api/showPerson').then(res => {
+      this.$axios.get('/api/showPerson', { params: {
+          id: this.data1.id
+        }
+      }).then(res => {
         this.data1 = res.data
         // for(let i in res.data) {
         //     console.log(2)
@@ -219,18 +222,34 @@ export default {
     },
     delplan (index) {
       this.data2.splice(index, 1)
-      this.$axios.post('/api/deletePlan?id=' + this.data2.id).then(res => {
-        if (res.data.message === '') {
-          this.$Message.info('删除成功')
+      let entity = {
+        'id': this.data2.id
+      }
+      console.log(this.data2.id)
+      // this.$axios.get('/api/deletePlan?id=' + this.data2.id).then(res => {
+      this.$axios.get('/api/deletePlan', { params: {
+          id: this.data2.id
         }
+      }).then(res => {
+        console.log(this.data2.id)
+        // console.log(this.data2[index])
+        this.$Message.info('删除预案成功')
+        this.$router.push({
+          name: 'EmergencyBank'
+        })
       })
     },
     delpeo (index) {
-      this.data1.splice(index, 1)
-      this.$axios.post('/api/deletePersonAssign?id=' + this.data1.id).then(res => {
-        if (res.data.message === '') {
-          this.$Message.info('删除成功')
-        }
+      // console.log(this.data1[index].id)
+      let entity = {
+        'id': this.data1[index].id
+      }
+      this.$axios.get('/api/deletePerson?id=' + this.data1[index].id).then(res => {
+        console.log(this.data1[index].id)
+        this.$Message.info('删除人员成功')
+        this.$router.push({
+          name: 'EmergencyBank'
+        })
       })
     }
   }

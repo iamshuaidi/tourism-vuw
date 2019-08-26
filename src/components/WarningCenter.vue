@@ -1,7 +1,7 @@
 <template>
   <div id="base" class="">
 
-    <!-- Unnamed (Í¼Æ¬) -->
+    <!-- Unnamed (å›¾ç‰‡) -->
     <div id="u597" class="ax_default image">
       <img id="u597_img" class="img " src="../images/EmergencyEarlyWarningCenter/u597.jpg"/>
       <!-- Unnamed () -->
@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <!-- Unnamed (¾ØÐÎ) -->
+    <!-- Unnamed (çŸ©å½¢) -->
     <div id="u599" class="ax_default box_1">
       <div id="u599_div" class=""></div>
       <!-- Unnamed () -->
@@ -19,16 +19,16 @@
       </div>
     </div>
 
-    <!-- Unnamed (¾ØÐÎ) Ó¦¼±Ô¤¾¯ÖÐÐÄ-->
-    <div id="u601" class="ax_default _Ò»¼¶±êÌâ">
+    <!-- Unnamed (çŸ©å½¢) åº”æ€¥é¢„è­¦ä¸­å¿ƒ-->
+    <div id="u601" class="ax_default _ä¸€çº§æ ‡é¢˜">
       <div id="u601_div" class=""></div>
       <!-- Unnamed () -->
       <div id="u602" class="text" style="visibility: visible;">
-        <p><span>Ó¦¼±Ô¤¾¯ÖÐÐÄ</span></p>
+        <p><span>åº”æ€¥é¢„è­¦ä¸­å¿ƒ</span></p>
       </div>
     </div>
 
-    <!-- Unnamed (¾ØÐÎ) -->
+    <!-- Unnamed (çŸ©å½¢) -->
     <div id="u603" class="ax_default box_1">
       <div id="u603_div" class=""></div>
       <!-- Unnamed () -->
@@ -37,10 +37,10 @@
       </div>
     </div>
 
-    <!-- Unnamed (×éºÏ) -->
+    <!-- Unnamed (ç»„åˆ) -->
     <div id="u605" class="ax_default">
 
-      <!-- Unnamed (¾ØÐÎ) -->
+      <!-- Unnamed (çŸ©å½¢) -->
       <div id="u606" class="ax_default box_1">
         <div id="u606_div" class=""></div>
         <!-- Unnamed () -->
@@ -50,72 +50,73 @@
       </div>
     </div>
 
-    <!-- Ô¤¾¯ÀàÐÍ (¾ØÐÎ) -->
-    <div id="u608" class="ax_default label" data-label="Ô¤¾¯ÀàÐÍ">
+    <!-- é¢„è­¦ç±»åž‹ (çŸ©å½¢) -->
+    <div id="u608" class="ax_default label" data-label="é¢„è­¦ç±»åž‹">
       <div id="u608_div" class=""></div>
       <!-- Unnamed () -->
       <div id="u609" class="text" style="visibility: visible;">
-        <p><span>Ô¤¾¯ÀàÐÍ£º</span></p>
+        <p><span>é¢„è­¦ç±»åž‹ï¼š</span></p>
       </div>
     </div>
 
-    <!-- Ô¤¾¯±êÌâ (¾ØÐÎ) -->
-    <div id="u610" class="ax_default label" data-label="Ô¤¾¯±êÌâ">
+    <!-- é¢„è­¦æ ‡é¢˜ (çŸ©å½¢) -->
+    <div id="u610" class="ax_default label" data-label="é¢„è­¦æ ‡é¢˜">
       <div id="u610_div" class=""></div>
       <!-- Unnamed () -->
       <div id="u611" class="text" style="visibility: visible;">
-        <p><span>Ô¤¾¯±êÌâ£º</span></p>
+        <p><span>é¢„è­¦æ ‡é¢˜ï¼š</span></p>
       </div>
     </div>
 
-    <!-- Ô¤¾¯ÄÚÈÝ (¾ØÐÎ) -->
-    <div id="u614" class="ax_default label" data-label="Ô¤¾¯ÄÚÈÝ">
+    <!-- é¢„è­¦å†…å®¹ (çŸ©å½¢) -->
+    <div id="u614" class="ax_default label" data-label="é¢„è­¦å†…å®¹">
       <div id="u614_div" class=""></div>
       <!-- Unnamed () -->
       <div id="u615" class="text" style="visibility: visible;">
-        <p><span>Ô¤¾¯ÄÚÈÝ£º</span></p>
+        <p><span>é¢„è­¦å†…å®¹ï¼š</span></p>
       </div>
     </div>
 
-    <!-- Ô¤¾¯ÄÚÈÝ¿ò (ÎÄ±¾¿ò) -->
-    <div id="u616" class="ax_default text_field" data-label="Ô¤¾¯ÄÚÈÝ¿ò">
+    <!-- é¢„è­¦å†…å®¹æ¡† (æ–‡æœ¬æ¡†) -->
+    <div id="u616" class="ax_default text_field" data-label="é¢„è­¦å†…å®¹æ¡†">
       <input id="u616_input" type="text" value=""/>
     </div>
 
-    <!-- Ô¤¾¯±êÌâ¿ò (ÎÄ±¾¿ò) -->
-    <div id="u617" class="ax_default text_field" data-label="Ô¤¾¯±êÌâ¿ò">
+    <!-- é¢„è­¦æ ‡é¢˜æ¡† (æ–‡æœ¬æ¡†) -->
+    <div id="u617" class="ax_default text_field" data-label="é¢„è­¦æ ‡é¢˜æ¡†">
       <input id="u617_input" type="text" value=""/>
     </div>
 
-    <!-- ·¢²¼Ô¤¾¯°´Å¥ (¾ØÐÎ) -->
-    <Button id="u618" class="ax_default primary_button" data-label="·¢²¼Ô¤¾¯°´Å¥" @click="Jump3">
-      ·¢²¼Ô¤¾¯
+    <!-- å‘å¸ƒé¢„è­¦æŒ‰é’® (çŸ©å½¢) -->
+    <Button id="u618" class="ax_default primary_button" data-label="å‘å¸ƒé¢„è­¦æŒ‰é’®" @click="Jump3">
+      å‘å¸ƒé¢„è­¦
     </Button>
 
-    <!-- ·µ»Ø (Í¼Æ¬) -->
-    <div id="u620" class="ax_default image" data-label="·µ»Ø" @click="Jump2">
+    <!-- è¿”å›ž (å›¾ç‰‡) -->
+    <div id="u620" class="ax_default image" data-label="è¿”å›ž" @click="Jump2">
       <img id="u620_img" class="img " src="../images/Complaint/u63.png" @click="Jump2"/>
       <!-- Unnamed () -->
       <div id="u621" class="text" style="display: none; visibility: hidden" @click="Jump2">
         <p><span></span></p>
       </div>
     </div>
-    <!-- Ô¤¾¯¼ÇÂ¼°´Å¥ (¾ØÐÎ) -->
-    <Button id="u622" class="ax_default primary_button" data-label="Ô¤¾¯¼ÇÂ¼°´Å¥" @click="Jump1">
-      Ô¤¾¯¼ÇÂ¼
+    <!-- é¢„è­¦è®°å½•æŒ‰é’® (çŸ©å½¢) -->
+    <Button id="u622" class="ax_default primary_button" data-label="é¢„è­¦è®°å½•æŒ‰é’®" @click="Jump1">
+      é¢„è­¦è®°å½•
     </Button>
 
-    <!-- Ô¤¾¯ÀàÐÍÏÂÀ­¿ò (ÏÂÀ­ÁÐ±í¿ò) -->
-    <div id="u624" class="ax_default droplist" data-label="Ô¤¾¯ÀàÐÍÏÂÀ­¿ò">
+    <!-- é¢„è­¦ç±»åž‹ä¸‹æ‹‰æ¡† (ä¸‹æ‹‰åˆ—è¡¨æ¡†) -->
+    <div id="u624" class="ax_default droplist" data-label="é¢„è­¦ç±»åž‹ä¸‹æ‹‰æ¡†">
       <select id="u624_input">
-        <option value="¼«¶ËÌìÆø">¼«¶ËÌìÆø</option>
-        <option selected value="¾°Çø»ðÔÖ">¾°Çø»ðÔÖ</option>
+        <option value="æžç«¯å¤©æ°”">æžç«¯å¤©æ°”</option>
+        <option selected value="æ™¯åŒºç«ç¾">æ™¯åŒºç«ç¾</option>
       </select>
     </div>
 
   </div>
 </template>
 <script>
+import qs from 'qs'
 export default {
   data () {
     return {
@@ -137,18 +138,22 @@ export default {
       var value1 = document.getElementById('u624_input').value
       var value2 = document.getElementById('u617_input').value
       var value3 = document.getElementById('u616_input').value
-      this.$axios.post(this.$host + '', {
-        type: value1,
-        title: value2,
-        plan: value3,
-        time: this.value4
-      }).then(res => {
+      // console.log(value1)
+      // console.log(value2)
+      // console.log(value3)
+      let entity = {
+        'type' : value1,
+        'title' : value2,
+        'content' : value3
+        // 'id':
+      }
+      this.$axios.post('/api/createWarning', qs.stringify(entity)).then(res => {
         console.log(res)
-        if (res.data.message === '') {
-          this.$router.push({
-            name: '111111'
-          })
-        }
+        this.$router.push({
+          name: 'welcome'
+        })
+      }).catch(res => {
+        this.$Message.error('æ·»åŠ å¤±è´¥')
       })
     }
 

@@ -190,7 +190,7 @@
       </div>
 
       <!-- 投诉处理中心 (矩形) -->
-      <div id="u356" class="ax_default label" data-label="投诉处理中心" v-on:click="dealComplaint">
+      <div id="u356" class="ax_default label" data-label="投诉处理中心" v-onclick="dealComplaint">
         <div id="u356_div" class=""></div>
         <!-- Unnamed () -->
         <div id="u357" class="text" style="visibility: visible;">
